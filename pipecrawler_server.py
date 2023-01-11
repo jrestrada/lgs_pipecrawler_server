@@ -2,7 +2,7 @@
 
 """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Description: :)))
+Description: :))) ;)
 Action Server that controls a pipe crawler's pneumatics
 through raspberry pi pins, relay, and solenoid valves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
 from std_msgs.msg import Int32
-# from gpiozero import LED as gpio
+from gpiozero import LED as gpio
 
 def gb__on():
     print("GB on Test")
@@ -53,37 +53,39 @@ def none():
     print("none")
     
 gripper_commands_consolever = {
-    1:gb__on,
-    2:gb__off,
-    3:e__on,
-    4:e__off,
-    5:gf__on,
-    6:gf__off,
+    1:gb__on, # GREEN TUBES
+    2:gb__off, # GREEN TUBES
+    3:e__on, # BLUE TUBES
+    4:e__off, # BLUE TUBES
+    5:gf__on, # RED TUBES
+    6:gf__off, # RED TUBES
     0:none
 }
 
-d = 1
+# d = 1
 
-# d = 2.25
-# gf = gpio(18)
-# e = gpio(17)
-# gb = gpio(22)
+d = 2.95
+gf = gpio(5)
+e = gpio(6)
+gb = gpio(16)
 
 #Use following when using control box 
 
-# gripper_commands = {
-#     1:gb.on,
-#     2:gb.off,
-#     3:e.on,
-#     4:e.off,
-#     5:gf.on,
-#     6:gf.off,
-#     0:none
-# }
+#Black mark = TOP
+
+gripper_commands = {
+    1:gb.on, #GREEN 
+    2:gb.off, #GREEN
+    3:e.on, #BLUE 
+    4:e.off, #BLUE
+    5:gf.on, #RED 
+    6:gf.off, #RED
+    0:none
+}
 
 def executeCommands(command_list):
     for i in range(len(command_list)):
-            gripper_commands_consolever[command_list[i]]()
+            gripper_commands[command_list[i]]()
             time.sleep(d)
 
 class CrawlactionServer(Node):
