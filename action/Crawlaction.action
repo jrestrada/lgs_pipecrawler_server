@@ -1,8 +1,0 @@
-#Request or Goal
-pipecrawler/Crawlpattern crawlercommand
----
-#Result
-bool successfulcrawl
----
-#Feedback
-int32 count

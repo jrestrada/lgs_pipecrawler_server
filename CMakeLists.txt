@@ -11,8 +11,9 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/Crawlpattern.msg"
-  "action/Crawlaction.action"
+  "msg/Crawlercmd.msg"
+  "msg/Crawlerstate.msg"
+  "action/Crawleraction.action"
   DEPENDENCIES std_msgs
 )
 
