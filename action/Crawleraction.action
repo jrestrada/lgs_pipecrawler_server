@@ -1,9 +1,0 @@
-#Request or Goal
-pipecrawler/Crawlercmd command
----
-#Result
-pipecrawler/Crawlerstate final
-bool success
----
-#Feedback
-pipecrawler/Crawlerstate current

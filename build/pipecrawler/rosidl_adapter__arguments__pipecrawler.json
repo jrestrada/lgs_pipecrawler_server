@@ -1,7 +1,0 @@
-{
-  "package_name": "pipecrawler",
-  "non_idl_tuples": [
-    "/home/josue/ros2_ws/src/pipecrawler:msg/Crawlpattern.msg",
-    "/home/josue/ros2_ws/src/pipecrawler:action/Crawlaction.action"
-  ]
-}

@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'pipecrawler'
+package_name = 'lgs_pipecrawler_server'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'server = pipecrawler.pipecrawler_server:main'
+            'server = lgs_pipecrawler_server.pipecrawler_server:main'
         ],
     },
 )
