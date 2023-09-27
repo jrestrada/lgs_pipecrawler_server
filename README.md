@@ -10,10 +10,10 @@ This server expects a custom action defined by the [lgs_interfaces package](http
 These actions can be requested from a terminal using the following syntax:
 
 ```console
-$ ros2 action send_goal --feedback crawler_action pipecrawler/action/Crawl '{command: {pattern: [2,5,3,6,1,4], timing: [,,,,,,,], looping: True}}
+$ ros2 action send_goal --feedback activate_crawler pipecrawler/action/Crawler '{command: {pattern: [2,5,3,6,1,4], timing: [,,,,,,,], looping: True}}
 ```
 When an action request is accepted, the node evaluates the values in the received *pattern* array to activate/deactivate the corresponding relays through the RaspberryPi's GPIO pins using the [gpiozero](https://gpiozero.readthedocs.io/en/stable/) library.
-This commands will be followed by a standby period determined by a corresponding value in the *timing* array. The commands will be executed either a single time, or ongoingly, as specified by the field *looping*.
+These commands will be followed by a standby period determined by a corresponding value in the *timing* array. The commands will be executed either a single time, or ongoingly, as specified by the field *looping*.
 
 An ongoing pattern will be interrupted when a new action is received and accepted.  
 
